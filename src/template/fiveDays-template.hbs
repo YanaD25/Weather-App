@@ -1,0 +1,35 @@
+<h2 class="five-days-city-title "></h2>
+<div class="weather-5day-container__wrapper">
+  <ul class="five-days-weather-list" data-slick='{"slidesToShow": 5, "slidesToScroll": 3}'>
+    {{#each this}}
+    <li class="five-days-weather-list__item" data-id="{{id}}">
+      <p class="five-days-weather-list__day" data-id="{{id}}">{{day}}</p>
+      <p class="five-days-weather-list__date" data-id="{{id}}">{{date}}</p>
+      <div class="five-days-weather-list__img" data-id="{{id}}">
+        <img src="http://openweathermap.org/img/w/{{icon}}.png" alt="icon" data-id="{{id}}">
+      </div>
+      <div class="five-days-weather-list__tempr" data-id="{{id}}">
+        <div class="five-days-weather-list__tempr--min temperature" data-id="{{id}}">
+          <h4 class="temperature__header" data-id="{{id}}">min</h4>
+          <span class="temperature__value" data-id="{{id}}">{{minTemperature}}&#176; </span>
+        </div>
+        <div class="five-days-weather-list__tempr--max temperature" data-id="{{id}}">
+          <h4 class="temperature__header" data-id="{{id}}">max</h4>
+          <span class="temperature__value" data-id="{{id}}">{{maxTemperature}}&#176;</span>
+        </div>
+
+            </div>
+            <button class="five-days-weather-list__item--btn" data-id="{{id}}">more info</button>
+        </li>
+        {{/each}}
+    </ul>
+    <div class="five-days-weather-btns">
+        <button class="five-days-weather-btns__prev slick-prev"></button>
+        <button class="five-days-weather-btns__next slick-next"></button>
+    </div>
+    <div class="five-days-weather__hourly">
+    </div>
+</div>
+ 
+
+  

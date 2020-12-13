@@ -1,0 +1,48 @@
+<div class="gallery-visually">
+  {{!-- <div class="hourly-weather-wrapper">
+    <button class="hourly-weather-close">&#10006;</button>
+  </div> --}}
+  <ul class="hourly-weather-list" data-slick='{"slidesToShow": 2, "slidesToScroll": 1}'>
+    {{#each forecast}}
+    <li class="hourly-weather-item" id="Clear">
+      <p class="hourly-weather-item__set-time">{{time}}</p>
+      <img class="hourly-weather-item__set-img" src="http://openweathermap.org/img/w/{{icon}}.png" alt="icon" />
+      <p class="hourly-weather-item__set-temperature">{{main.temp}}&#176;</p>
+      <div class="hourly-weather-item__weather-details">
+        <div class="hourly-weather-item__wind-value-wrapper">
+          <svg class="hourly-weather-item__svg" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="20" viewBox="0 0 22 20">
+            <image id="Слой_43" data-name="Слой 43" class="cls-1" width="22" height="20"
+              xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAUCAYAAACJfM0wAAACJ0lEQVQ4jZ3UOWhVQRgF4M8s7oIoimsSFUQFQUFUtBDRKIi4NFEhlWCrjRbaWAp2WlnaCLEJuCCihSjRwgXcEBL3HcEFxN2YK5P8L7m57yUuB+bdd+efOXPe+c+8IVmW+Q9sQB268B0X8Ci/4F+Jq7Ej7cN5fMRCrMQx3OldmYhzo7bwXhyNWZbtrTA/M8uyg1mWNWVZ1pDmqgqKtmJBmc4eJFUrcKqs0mPDEXzFdiypKSxIns3DzXjeyx04A0fxoIy2jzyNu2gqKm7D6PieGjQZ41CPA4OQ5vEY7UXipxiFkbiF+dGoT2XbB0ZyoT59LI3o1IRHXUGW1G/EO/zCNlzCj6hXQvp1m9GR4pY2D8czPA+iMZiD9diPTjRjBN0N7yqQlg76iSc4V8zxmrAhnZwKr3AR36KeclwbxFmMzgrK+12QtGFSKP5StnJgDI0mp8vyoRJxHptCXXWoPVmoL4qkpPqwaPjl/M0rEqeo7YssXomNqzEWh3KW7MRnnMHrMlmRBNG8RiyLk0/n1jzELqxDa8zdj0Ym0glxeerCltTAttThidgTC1oLpCW0RCxXxfs1TAthzfFH1Bk373ryOhW24DZOlNH14Q2OY3kIaIlsT42YJuva8xuqQv5gpCXcwGFMx9zYk1LwPizshxLx+L8gLuEFGuKZItaBKeF5P8VXsTs8+xMWY3aoL+Fl+JoC0ItS3NZiFt5WuK7d6+KWJU/PFv0sA34DxJbLKlGIrxgAAAAASUVORK5CYII=" />
+          </svg>
+          <p class="hourly-weather-item__pressure-value">{{main.pressure}}mm</p>
+        </div>
+        <div class="hourly-weather-item__wind-value-wrapper">
+          <svg class="hourly-weather-item__svgs" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" width="13" height="20" viewBox="0 0 13 20">
+            <image id="Слой_44" data-name="Слой 44" class="cls-1" width="13" height="20"
+              xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAYAAABWMrcvAAABZUlEQVQ4jY3TTUtVURTG8Z9XRSyokIJAzKAI0yZKhGQWifUBChw67Ev4MRw7DYciDhyUiNMgnRgUIvQGUhBdaJJRO1asAyc93XzgcNhn7/86z3rZSilNT3cpZb6U0t+039Kse7iB+027TdBljGEBl3DtJNADbOAHnmHmf9BtdGE313v4jrv/gnoxidUjgdZwPfePQVN4i4Mj0Ge00/Zf0CmMZA5NWscVnKlDUxmt3QCEvuIj7tShix3+Uuk5zqMnoJv4md47qZ1tmGyl1w95OMr9EOO5HsRELdA+hgPqwcv8GJMwm++zeJR9qrQd64AKvuXHT3iPV1nivVqjQ4dxtpWWWjVoMUv7KwM8wYUa2F/Zq3IIxZBGHpsYxVUM1eyfC2gnx6fSAFbwBa9zeCOXUFyZ3a64VHiMPjztUPK5TGO5gkLzOI0tvMmehPW4T9PZy6UoXB0K3Ur/cSCg7pzud3jx5wR+A552cfgIbqezAAAAAElFTkSuQmCC" />
+          </svg>
+          <p class="hourly-weather-item__humidity-value">{{main.humidity}}%</p>
+        </div>
+        <div class="hourly-weather-item__wind-value-wrapper">
+          <svg class="hourly-weather-item__svg" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="20" viewBox="0 0 24 20">
+            <image id="Слой_45" data-name="Слой 45" class="cls-1" width="24" height="20"
+              xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAABrklEQVQ4ja3VzatNYRTH8c85d3tJKLmpm0yUEgMib0NCmVD8ASZmMpaXMjE0NDahmxRmMlWSIomBRAZKXorCvVE4R8texz2d3d7d7j7f2p2zn7Oetdaz1m89p9Pv9zWwEYexDN9xG2/qzas0BdiNo3iIV9iMbbiGZyO2e7EDizCDe3iqIcBKnMcNPB5xdAhn8RtdnMFiPMAXrMd2PMfVouK6JIz6I86D+9iXCYSzk+n8wpDNI9zFORzsVlyXvMblyipLsQTfMIl1uFix4iuuY3/dCWbyGaaDE/iU5dmUn78qu+eSnI0Ax7AGvYpJSS+bN4WfuJTrL/GhYj1HJDRR5KZZ/KmYlHTT5kkqasDHfOrYGYnVqagtIenjmC5SeqsaTjBfBqWMxq/FnZiFIms71dCs+dJJab8P/aeMawdtbMQJtuawtM2+l01/O/xDkXfIZB5vocTeCazIK2L6f+Qxl2g1Tqecb0mNL5Qo6/KRvZ9xJW/iom2AXThVWS1V9GPQ1zYB3uX8xM06zJ50HkFa9yCmNaY2dB//eBtwIN+j2WNp8hFsye8h1Zt48e8NfwHaNmwH7qR0JQAAAABJRU5ErkJggg==" />
+          </svg>
+          <p class="hourly-weather-item__wind-value">{{wind.speed}}m/s</p>
+        </div>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+</div>
+<div class="hourly-weather-btns">
+  <button class="hourly-weather-btns__prev slick-prev"></button>
+  <button class="hourly-weather-btns__next slick-next"></button>
+</div>
+{{!-- вставила "progressbar"  --}}
+ <div class="progressbar" role="progressbar" aria-valuemin="25" aria-valuemax="100">
+    <span class="progressbar__label sr-only">
+  </div>

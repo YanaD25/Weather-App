@@ -1,0 +1,50 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding-bottom: 20px;
+}
+
+.container {
+  width: 280px;
+  margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    width: 610px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 1060px;
+  }
+}
+
+.background-image {
+  background-image: url("https://miro.medium.com/max/3200/1*-FJDsWYx-uXGgtZrZUAWtg.jpeg");
+  position: relative;
+  width: 100%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.slick-list {
+  width: 100%;
+}
+
+.container-for-timer-and-quote {
+  @media screen and (min-width: 1280px) {
+    display: flex;
+  }
+}

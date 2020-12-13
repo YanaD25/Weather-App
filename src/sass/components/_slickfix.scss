@@ -1,0 +1,156 @@
+button.five-days-weather-btns__prev.slick-arrow.slick-prev:before {
+  @media screen and (max-width: 768px) {
+  left: 70px;
+ top: -1px;
+  }
+  @media screen and (min-width: 768px) {
+    top: -130px;
+    left:0;
+  }
+ 
+}
+
+button.five-days-weather-btns__next.slick-arrow.slick-next:before {
+ right: 70px;
+ top: -1px;
+  @media screen and (min-width: 768px) {
+    top: -130px;
+    right:0;
+  }
+  
+}
+
+button.hourly-weather-btns__prev.slick-prev.slick-arrow:before,
+button.hourly-weather-btns__next.slick-next.slick-arrow:before {
+  position: relative;
+  border-radius: 50%;
+  background-color: $background-two-color;
+  background-position: bottom;
+}
+
+.slick-prev,
+.slick-next {
+  height: 30px;
+  width: 30px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background: transparent;
+    color: transparent;
+
+    &:before {
+      opacity: $slick-opacity-on-hover;
+    }
+  }
+
+  &.slick-disabled:before {
+    opacity: $slick-opacity-not-active;
+  }
+
+  &:before {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    color: $slick-arrow-color;
+    opacity: $slick-opacity-default;
+  }
+}
+
+.slick-slider {
+  position: relative;
+  box-sizing: border-box;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+
+.slick-prev:before {
+  font-size: 25px;
+  font-weight: bold;
+  content: '\FE64';
+}
+
+.slick-next:before {
+  font-size: 25px;
+  font-weight: bold;
+  content: '\FE65';
+}
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  margin: 15;
+  padding: 0;
+   //  Начало! не могу проверить но может это пофиксит когда ночью заходит 5 дней вместо 6
+  @media screen and (min-width: 1280px) {
+    text-align: center;
+  }
+  // конец
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    outline: none;
+  }
+
+  &.dragging {
+    cursor: pointer;
+    cursor: hand;
+    outline: none;
+  }
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  transform: translate3d(0, 0, 0);
+  outline: none;
+}
+
+.slick-slide {
+  float: left;
+  height: auto;
+  min-height: 1px;
+  // ниже добавить outline: none; (убираем бордер при наведении )
+  outline: none;
+
+  [dir='rtl'] & {
+    float: right;
+  }
+  
+  img {
+    display: block;
+  }
+
+  &.slick-loading img {
+    display: none;
+  }
+
+  display: none;
+
+  &.dragging img {
+    pointer-events: none;
+  }
+
+  .slick-initialized & {
+    display: block;
+  }
+
+  .slick-loading & {
+    visibility: hidden;
+  }
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
